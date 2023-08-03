@@ -1,0 +1,29 @@
+on:
+    push :
+        branches : "*"
+    
+    pull_request : 
+        branches : "*"
+
+jobs : 
+    build_and_test : 
+        runs-on :
+            - ubuntu-latest
+            - windows-latest
+
+        steps :
+
+            - name : checkout to repo
+              uses : actions/checkout@v3
+
+            - name : setup nodejs
+              uses : actions/setup-node@v3
+              with :
+                node-version : 18
+
+            - name : install deps
+              run : npm ci
+
+            - name : build application 
+              run : npm run build
+
