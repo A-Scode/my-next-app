@@ -18,9 +18,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <h1 >Hey I'm Layout Component 🖐</h1>
+      <body className={inter.className}  style={{display :"flex" , placeItems : "center"  , flexDirection : 'column' , height :"100%" , gap: 20}}>
+        <h1 style={{
+          borderWidth : 2, borderColor:"red" , borderStyle:"solid"
+        }}>Hey I&apos;m Layout Component 🖐</h1>
+        <div style={{display :"flex" , placeItems : "center"  , flexDirection : 'column' , height :"100%" , gap: 20}}>
+
           {children}
+          
+        </div>
       </body>
     </html>
   )
